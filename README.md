@@ -55,15 +55,16 @@ In `src/index.css`:
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Nexa', ui-sans-serif, system-ui, ...;
+  --font-sans: "Nexa", ui-sans-serif, system-ui, ...;
 }
 
 @utility font-nexa {
-  font-family: 'Nexa', ...;
+  font-family: "Nexa", ...;
 }
 ```
 
 All Tailwind utility classes work out of the box:
+
 - Layout: `flex`, `grid`, `min-h-screen`, etc.
 - Spacing: `p-4`, `mx-auto`, `mb-6`, etc.
 - Colors: `bg-gray-50`, `text-gray-900`, `bg-blue-600`, etc.
@@ -85,9 +86,7 @@ The project is configured to use the NEXA font family. To enable it:
 ### Example Usage
 
 ```tsx
-<div className="font-nexa text-4xl">
-  This uses NEXA font
-</div>
+<div className="font-nexa text-4xl">This uses NEXA font</div>
 ```
 
 ## ✅ Verification
@@ -124,12 +123,12 @@ TXA-26/
 
 If you're familiar with Tailwind v3, here are the key differences:
 
-| Tailwind v3 | Tailwind v4 |
-|-------------|-------------|
-| `tailwind.config.js` | `@theme` in CSS |
-| `@tailwind base;` | `@import "tailwindcss";` |
-| `@tailwind components;` | *(automatic)* |
-| `@tailwind utilities;` | *(automatic)* |
+| Tailwind v3                  | Tailwind v4                 |
+| ---------------------------- | --------------------------- |
+| `tailwind.config.js`         | `@theme` in CSS             |
+| `@tailwind base;`            | `@import "tailwindcss";`    |
+| `@tailwind components;`      | _(automatic)_               |
+| `@tailwind utilities;`       | _(automatic)_               |
 | `postcss.config.js` required | Still used for autoprefixer |
 
 ## 🐛 Troubleshooting
@@ -157,7 +156,6 @@ If you're familiar with Tailwind v3, here are the key differences:
 
 **Need help?** Check the console for errors or inspect elements in DevTools to see which styles are applied.
 
-
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
@@ -173,9 +171,9 @@ If you are developing a production application, we recommend updating the config
 
 ```js
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(["dist"]),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     extends: [
       // Other configs...
 
@@ -190,40 +188,40 @@ export default defineConfig([
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
       // other options...
     },
   },
-])
+]);
 ```
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
 // eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactX from "eslint-plugin-react-x";
+import reactDom from "eslint-plugin-react-dom";
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(["dist"]),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     extends: [
       // Other configs...
       // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
+      reactX.configs["recommended-typescript"],
       // Enable lint rules for React DOM
       reactDom.configs.recommended,
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
       // other options...
     },
   },
-])
+]);
 ```
