@@ -5,18 +5,22 @@
 
 /* Thin (100) */
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Thin.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Thin.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Thin.woff2") format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-ThinItalic.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-ThinItalic.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-ThinItalic.woff2")
+      format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-ThinItalic.woff")
+      format("woff");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -24,18 +28,22 @@
 
 /* Light (300) */
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Light.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Light.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Light.woff2") format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-LightItalic.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-LightItalic.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-LightItalic.woff2")
+      format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-LightItalic.woff")
+      format("woff");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -43,18 +51,21 @@
 
 /* Book/Regular (400) */
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Regular.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Regular.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Regular.woff2")
+      format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Italic.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Italic.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Italic.woff2") format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Italic.woff") format("woff");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -62,18 +73,22 @@
 
 /* Book (450) - Alternative regular weight */
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Book.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Book.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Book.woff2") format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Book.woff") format("woff");
   font-weight: 450;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-BookItalic.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-BookItalic.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-BookItalic.woff2")
+      format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-BookItalic.woff")
+      format("woff");
   font-weight: 450;
   font-style: italic;
   font-display: swap;
@@ -81,18 +96,22 @@
 
 /* Bold (700) */
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Bold.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Bold.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-BoldItalic.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-BoldItalic.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-BoldItalic.woff2")
+      format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-BoldItalic.woff")
+      format("woff");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -100,18 +119,22 @@
 
 /* Heavy (800) */
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Heavy.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Heavy.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Heavy.woff2") format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Heavy.woff") format("woff");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-HeavyItalic.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-HeavyItalic.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-HeavyItalic.woff2")
+      format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-HeavyItalic.woff")
+      format("woff");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -119,18 +142,22 @@
 
 /* XBold (900) */
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-XBold.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-XBold.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-XBold.woff2") format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-XBold.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-XBoldItalic.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-XBoldItalic.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-XBoldItalic.woff2")
+      format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-XBoldItalic.woff")
+      format("woff");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -138,18 +165,22 @@
 
 /* Black (950) */
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Black.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-Black.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Black.woff2") format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-Black.woff") format("woff");
   font-weight: 950;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/Nexa-Font-Family/Web/Nexa-BlackItalic.woff2') format('woff2'),
-       url('./assets/fonts/Nexa-Font-Family/Web/Nexa-BlackItalic.woff') format('woff');
+  font-family: "Nexa";
+  src:
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-BlackItalic.woff2")
+      format("woff2"),
+    url("./assets/fonts/Nexa-Font-Family/Web/Nexa-BlackItalic.woff")
+      format("woff");
   font-weight: 950;
   font-style: italic;
   font-display: swap;
@@ -157,16 +188,29 @@
 
 /* Tailwind v4 theme configuration - extend font-sans with NEXA */
 @theme {
-  --font-sans: 'Nexa', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans:
+    "Nexa", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Create custom font-nexa utility */
 @utility font-nexa {
-  font-family: 'Nexa', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    "Nexa",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 /* Custom base styles */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
