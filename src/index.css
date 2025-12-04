@@ -1,6 +1,12 @@
 /* Import Tailwind CSS v4 */
 @import "tailwindcss";
 
+/* custom colors */
+:root {
+  --nav-color:#403A3A;
+  --primary-color:#F63A0A
+}
+
 /* NEXA Font Family - Complete Weight Range */
 
 /* Thin (100) */
