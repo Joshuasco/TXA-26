@@ -1,10 +1,12 @@
 import EventSessionCard from "./EventSessionCard";
 import { motion } from "framer-motion";
+import LearningTrackCard from "./LearningTrackCard";
+import { AnimatePresence } from "framer-motion";
 
 const About = () => {
   return (
     <motion.section
-      className="flex flex-col mx-4 md:mx-auto max-w-full overflow-hidden"
+      className="flex flex-col mx-4 md:mx-auto max-w-full overflow-hidden "
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
@@ -65,7 +67,7 @@ const About = () => {
         </motion.div>
       </motion.section>
       <motion.section
-        className="flex flex-col items-start justify-center md:justify-start py-3 md:py-5 gap-10 relative h-auto md:h-[695px] overflow-hidden"
+        className="flex flex-col items-start justify-center md:justify-start py-3 md:py-5 gap-10 relative mt-5"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -77,7 +79,7 @@ const About = () => {
               {" "}
               What to expect at Tech X Africa 2026
             </h2>
-            <div className="flex items-center gap-2">
+            <div className=" hidden md:flex  items-center gap-2">
               <img src="prev-btn.png" alt="previous btn" />
               <img src="next-btn.png" alt="next button" />
             </div>
@@ -95,40 +97,80 @@ const About = () => {
             />
             <EventSessionCard
               heading={" Keynotes"}
-              description={
-                "Focus on future tech trends (Blockchain, Web3)"
-              }
+              description={"Focus on future tech trends (Blockchain, Web3)"}
               color={"#FFB901"}
               imageSrc={"/event-session-img-2.jpg"}
             />
             <EventSessionCard
               heading={"Networking"}
-              description={
-                " Highlight opportunities to connect with others"
-              }
+              description={" Highlight opportunities to connect with others"}
               color={"#3B0100"}
               imageSrc={"/event-session-img-3.jpg"}
             />
             <EventSessionCard
               heading={" Game and Picture Sesion"}
-              description={
-                "Highlight opportunities to connect with others"
-              }
+              description={"Highlight opportunities to connect with others"}
               color={"#D93429"}
               imageSrc={"/event-session-img-3.jpg"}
             />
           </div>
 
-          <div></div>
+          {/* Learning track */}
+
+          <div className="flex flex-col gap-4 w-full max-w-[1274px] mt-4 mx-auto">
+            <h2 className="font-semibold text-center text-4xl">
+              7 Learning Tracks
+            </h2>
+            {/* Learning Track Cards Container with animation and centered last row */}
+            <div className="w-full flex flex-row gap-8 overflow-x-auto overflow-y-hidden hide-scrollbar max-w-full md:grid md:grid-cols-4 md:gap-3.5">
+              <AnimatePresence>
+                {/* First row: 4 cards */}
+                {["Emerging Tech (AI & ML)", "The Creative Economy", "Entering Tech", "The Future of Community"].map((title, idx) => (
+                  <motion.div
+                    key={title}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 40 }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  >
+                    <LearningTrackCard title={title} />
+                  </motion.div>
+                ))}
+                {/* Second row: 3 cards, centered on md screens */}
+                <div className="hidden md:flex col-span-4 w-full justify-center gap-8 mt-4">
+                  {["Building for Open Source", "Building & Problem Solving", "Women Making in Africa Technology ecosytem"].map((title, idx) => (
+                    <motion.div
+                      key={title}
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 40 }}
+                      transition={{ duration: 0.5, delay: (4 + idx) * 0.1 }}
+                    >
+                      <LearningTrackCard title={title} />
+                    </motion.div>
+                  ))}
+                </div>
+                {/* On small screens, all cards in a row with scroll */}
+                <div className="flex md:hidden flex-row gap-8">
+                  {["Building for Open Source", "Building & Problem Solving", "Women Making in Africa Technology ecosytem"].map((title, idx) => (
+                    <motion.div
+                      key={title}
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 40 }}
+                      transition={{ duration: 0.5, delay: (4 + idx) * 0.1 }}
+                    >
+                      <LearningTrackCard title={title} />
+                    </motion.div>
+                  ))}
+                </div>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 w-full max-w-[1274px] mx-auto h-[685px]">
-          <h2 className="font-semibold text-center text-4xl">
-            7 Learning Tracks
-          </h2>
-        </div>
-  </motion.section>
+      </motion.section>
     </motion.section>
   );
-}
+};
 
 export default About;
