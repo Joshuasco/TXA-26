@@ -76,7 +76,7 @@ const About = () => {
           <div className="flex items-center justify-between w-full">
             <div className="hidden md:block"></div>
             <h2 className="font-semibold text-center text-4xl">
-              {" "}
+            
               What to expect at Tech X Africa 2026
             </h2>
             <div className=" hidden md:flex  items-center gap-2">
