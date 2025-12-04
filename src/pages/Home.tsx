@@ -1,6 +1,7 @@
 import Hero from "../components/hero";
 import About from "../components/about";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 import ContactUs from "../components/ContactUs";
 import PartnersAndSponsors from "../components/PartnersAndSponsors";
 import Speakers from "../components/Speakers"
@@ -8,6 +9,7 @@ import Speakers from "../components/Speakers"
 export default function Home() {
   return (
     <>
+      <Header/>
       <Hero />
       <About />
       <Speakers/>
