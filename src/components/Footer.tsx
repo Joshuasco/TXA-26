@@ -14,7 +14,7 @@ export default function Footer() {
 
   return (
     <motion.footer
-          className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-6 bg-white mt-2 mx-4 px-4 py-6"
+          className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-6 bg-white mt-2 mx-4 px-4"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
