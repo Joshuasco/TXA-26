@@ -13,10 +13,14 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-      <About />
+      <div id="about">
+        <About />
+      </div>
       <Speakers />
       <GetInvolved />
-      <PastEvent />
+      <div id="past-events">
+        <PastEvent />
+      </div>
       <PartnersAndSponsors />
       <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
         <ContactUs />
