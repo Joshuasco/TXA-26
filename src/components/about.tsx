@@ -76,7 +76,7 @@ const About = () => {
           <div className="flex items-center justify-between w-full">
             <div className="hidden md:block"></div>
             <h2 className="font-semibold text-center text-4xl">
-            
+
               What to expect at Tech X Africa 2026
             </h2>
             <div className=" hidden md:flex  items-center gap-2">
@@ -117,8 +117,8 @@ const About = () => {
 
           {/* Learning track */}
 
-          <div className="flex flex-col gap-4 w-full max-w-[1274px] mt-4 mx-auto">
-            <h2 className="font-semibold text-center text-4xl">
+          <div className="flex flex-col gap-4 w-full max-w-[1274px] mt-4  mx-auto">
+            <h2 className="font-semibold text-center text-4xl pb-4">
               7 Learning Tracks
             </h2>
             {/* Learning Track Cards Container with animation and centered last row */}

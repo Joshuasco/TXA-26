@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   return (
-    <div className="font-nexa md:px-12 md:py-12">
+    <div className="font-nexa md:px-12">
       <LoadingScreen isLoading={isLoading} />
 
       <Routes>
