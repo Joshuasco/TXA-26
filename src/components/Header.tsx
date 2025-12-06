@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaX } from "react-icons/fa6";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
