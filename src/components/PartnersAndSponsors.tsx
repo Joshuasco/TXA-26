@@ -25,7 +25,7 @@ const sponsors = [
   { id: 9, image: image9, alt: "stallion" },
   { id: 10, image: image10, alt: "cgchub" },
   { id: 11, image: image11, alt: "success" },
-  { id: 12, image: image12, alt: "dfm" }
+  { id: 12, image: image12, alt: "dfm" },
 ];
 
 // Animation variants
@@ -35,33 +35,35 @@ const container = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      when: "beforeChildren"
-    }
-  }
+      when: "beforeChildren",
+    },
+  },
 };
 
-const item: Variants = { //added varaints type for ease animation
+const item: Variants = {
+  //added varaints type for ease animation
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease:[0, 0, 0.58, 1] 
-    }
-  }
+      ease: [0, 0, 0.58, 1],
+    },
+  },
 };
 
-const titleAnimation: Variants = { //added varaints type for ease animation
+const titleAnimation: Variants = {
+  //added varaints type for ease animation
   hidden: { y: -30, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
       duration: 0.8,
-      ease: [0, 0, 0.58, 1] 
-    }
-  }
+      ease: [0, 0, 0.58, 1],
+    },
+  },
 };
 
 export default function PartnersAndSponsors() {
@@ -93,7 +95,8 @@ export default function PartnersAndSponsors() {
               // Responsive border logic
               // sm: 2 columns, so border-r on first col, border-b except last row
               // md/lg: 3/4 columns, border-r on all but last col, border-b except last row
-              const cols = window.innerWidth < 640 ? 2 : window.innerWidth < 1024 ? 3 : 4;
+              const cols =
+                window.innerWidth < 640 ? 2 : window.innerWidth < 1024 ? 3 : 4;
               const rows = Math.ceil(sponsors.length / cols);
               const row = Math.floor(idx / cols);
               const col = idx % cols;
@@ -126,8 +129,6 @@ export default function PartnersAndSponsors() {
             })}
           </motion.div>
         </div>
-
-
       </div>
     </motion.div>
   );
