@@ -11,11 +11,11 @@ const Header = () => {
   const [openTab, setOpenTab] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const navList = [
-                { to: "/#about", label: "Home" },
-                { to: "/#about", label: "About Us" },
+                { to: "/", label: "Home" },
+                { to: "/about", label: "About Us" },
                 { to: "/speakers", label: "Speakers" },
                 { to: "/#", label: "Get Involved" },
-                { to: "/#past-events", label: "Past Events" },
+                { to: "/past-events", label: "Past Events" },
                 { to: "/faq", label: "FQA" },
                 ] 
 const dropDownList = [
@@ -116,13 +116,13 @@ const dropDownList = [
             {!openTab ? (
               <GiHamburgerMenu
                 size={25}
-                className="cursor-pointer text-black"
+                className="cursor-pointer text-(--nav-color)"
                 onClick={() => setOpenTab(true)}
               />
             ) : (
               <FaX
                 size={25}
-                className="cursor-pointer text-black"
+                className="cursor-pointer text-(--nav-color)"
                 onClick={() => setOpenTab(false)}
               />
             )}
@@ -136,7 +136,7 @@ const dropDownList = [
             openTab ? "max-h-[500px]" : "max-h-0"
           }`}
         >
-          <div className="flex flex-col gap-2 py-4 text-black bg-white shadow-md">
+          <div className="flex flex-col gap-2 py-4 text-(--nav-color) bg-white shadow-md">
              {navList.map(({ to, label }) => (
                 label == "Get Involved"? 
                 //  Dropdown 
@@ -156,7 +156,7 @@ const dropDownList = [
                 <a  key={href}
                     href={href}
                     download
-                    className="px-4 py-2  rounded-lg hover:bg-[#F63A0A] hover:text-white transition-all duration-300"
+                    className="px-4 py-2  rounded-lg hover:bg-(--primary-color) hover:text-white transition-all duration-300"
                 >
                     {label}
                 </a>
@@ -165,7 +165,7 @@ const dropDownList = [
                     href={href}
                     target={target}
                     rel={rel}
-                    className="px-4 py-2 rounded-lg hover:bg-[#F63A0A] hover:text-white transition-all duration-300"
+                    className="px-4 py-2 rounded-lg hover:bg-(--primary-color) hover:text-white transition-all duration-300"
                 >
                     {label}
                 </a>

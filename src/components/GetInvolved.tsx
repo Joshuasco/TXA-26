@@ -12,7 +12,7 @@ function GetInvolved() {
       className="flex flex-col items-center md:items-start md:justify-between gap-8 md:gap-16 px-4 md:px-0 pt-12 md:pt-24"
     >
       {/* TOP SECTION */}
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8 w-full">
+      <div className="flex flex-col lg:flex-row items-center md:items-start gap-4 md:gap-8 w-full">
 
         {/* IMAGE CONTAINER (same height as right content) */}
         <div className="flex max-w-[782px] h-auto md:max-h-[588px] ">
@@ -24,7 +24,7 @@ function GetInvolved() {
         </div>
 
         {/* CONTENT COLUMN */}
-        <div className="flex flex-col gap-2 max-w-md">
+        <div className="flex flex-col gap-2 lg:max-w-md">
           <h2 className="font-semibold text-3xl">How to get Involved</h2>
 
           <div className="flex flex-col gap-2">
