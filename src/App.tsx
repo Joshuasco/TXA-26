@@ -38,7 +38,6 @@ function App() {
           {/* <Route path="speakers" element={<Speakers />} /> */}
           {/* <Route path="faq" element={<Faq />} /> */}
           {/* <Route path="market" element={<Market />} /> */}
-          
         </Route>
       </Routes>
     </div>

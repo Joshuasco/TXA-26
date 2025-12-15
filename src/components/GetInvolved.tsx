@@ -13,7 +13,6 @@ function GetInvolved() {
     >
       {/* TOP SECTION */}
       <div className="flex flex-col lg:flex-row items-center md:items-start gap-4 md:gap-8 w-full">
-
         {/* IMAGE CONTAINER (same height as right content) */}
         <div className="flex max-w-[782px] h-auto md:max-h-[588px] ">
           <img

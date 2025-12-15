@@ -76,7 +76,6 @@ const About = () => {
           <div className="flex items-center justify-between w-full">
             <div className="hidden md:block"></div>
             <h2 className="font-semibold text-center text-4xl">
-
               What to expect at Tech X Africa 2026
             </h2>
             <div className=" hidden md:flex  items-center gap-2">
@@ -125,7 +124,12 @@ const About = () => {
             <div className="w-full flex flex-row gap-8 overflow-x-auto overflow-y-hidden hide-scrollbar max-w-full md:grid md:grid-cols-4 md:gap-3.5">
               <AnimatePresence>
                 {/* First row: 4 cards */}
-                {["Emerging Tech (AI & ML)", "The Creative Economy", "Entering Tech", "The Future of Community"].map((title, idx) => (
+                {[
+                  "Emerging Tech (AI & ML)",
+                  "The Creative Economy",
+                  "Entering Tech",
+                  "The Future of Community",
+                ].map((title, idx) => (
                   <motion.div
                     key={title}
                     initial={{ opacity: 0, y: 40 }}
@@ -138,7 +142,11 @@ const About = () => {
                 ))}
                 {/* Second row: 3 cards, centered on md screens */}
                 <div className="hidden md:flex col-span-4 w-full justify-center gap-8 mt-4">
-                  {["Building for Open Source", "Building & Problem Solving", "Women Making in Africa Technology ecosytem"].map((title, idx) => (
+                  {[
+                    "Building for Open Source",
+                    "Building & Problem Solving",
+                    "Women Making in Africa Technology ecosytem",
+                  ].map((title, idx) => (
                     <motion.div
                       key={title}
                       initial={{ opacity: 0, y: 40 }}
@@ -152,7 +160,11 @@ const About = () => {
                 </div>
                 {/* On small screens, all cards in a row with scroll */}
                 <div className="flex md:hidden flex-row gap-8">
-                  {["Building for Open Source", "Building & Problem Solving", "Women Making in Africa Technology ecosytem"].map((title, idx) => (
+                  {[
+                    "Building for Open Source",
+                    "Building & Problem Solving",
+                    "Women Making in Africa Technology ecosytem",
+                  ].map((title, idx) => (
                     <motion.div
                       key={title}
                       initial={{ opacity: 0, y: 40 }}
