@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 // uncomment each of the import once page is created
 
-// import About from "./pages/About";
+import About from "./pages/About";
 // import Speakers from "./pages/Speakers";
 // import Faq from "./pages/Faq";
 // import Market from "./pages/Market";
@@ -34,11 +34,11 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           {/* uncomment each of the route once page is created */}
-          {/* <Route path="about" element={<About />} /> */}
+          <Route path="about" element={<About />} />
           {/* <Route path="speakers" element={<Speakers />} /> */}
           {/* <Route path="faq" element={<Faq />} /> */}
           {/* <Route path="market" element={<Market />} /> */}
-          
+
         </Route>
       </Routes>
     </div>
