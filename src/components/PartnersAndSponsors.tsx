@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion"; //newly added
 import image1 from "../assets/partnersAndSponsors/pouchers.png";
 import image2 from "../assets/partnersAndSponsors/cleva.jpg";
 import image3 from "../assets/partnersAndSponsors/enforca.jpg";
@@ -39,26 +40,26 @@ const container = {
   }
 };
 
-const item = {
+const item: Variants = { //added varaints type for ease animation
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: [0, 0, 0.58, 1]
+      ease:[0, 0, 0.58, 1] 
     }
   }
 };
 
-const titleAnimation = {
+const titleAnimation: Variants = { //added varaints type for ease animation
   hidden: { y: -30, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
       duration: 0.8,
-      ease: [0.34, 1.56, 0.64, 1]
+      ease: [0, 0, 0.58, 1] 
     }
   }
 };

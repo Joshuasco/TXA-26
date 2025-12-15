@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaX } from "react-icons/fa6";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
@@ -11,26 +11,26 @@ const Header = () => {
   const [openTab, setOpenTab] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const navList = [
-                { to: "/#about", label: "Home" },
-                { to: "/#about", label: "About Us" },
+                { to: "/", label: "Home" },
+                { to: "/about", label: "About Us" },
                 { to: "/speakers", label: "Speakers" },
                 { to: "/#", label: "Get Involved" },
-                { to: "/#past-events", label: "Past Events" },
+                { to: "/past-events", label: "Past Events" },
                 { to: "/faq", label: "FQA" },
-                ]
+                ] 
 const dropDownList = [
                 { href: "https://bit.ly/txavolunteer2025", label: "Apply to Volunteer", target:"_blank", rel:"noopener noreferrer" },
                 { href: "/TXA 25 Official Proposal.pdf", label: "Become a Sponsor", target:"_blank", rel:"noopener noreferrer" },
                 { href: "https://wa.me/+2348123051357", label: "Become a Partner", target:"_blank", rel:"noopener noreferrer" },
-
-                ]
+           
+                ] 
 
   return (
-
-    <nav className="py-2 w-full md:mb-2">
+    
+    <nav className="py-2 w-full">
         <div className=" container w-full  z-50 bg-white  transition-all">
         {/* Header Top */}
-        <div className="flex items-center justify-between px-2 md:px-0  w-full ">
+        <div className="flex items-center justify-between px-2 md:px  w-full ">
           {/* Logo */}
           <NavLink to="/" end className="z-50 ">
             <LazyLoadImage
@@ -47,9 +47,9 @@ const dropDownList = [
             {/* Center Nav Links */}
             <div className="flex flex-1 justify-center items-center gap-10 ">
                 {navList.map(({ to, label }) => (
-                    label == "Get Involved"?
+                    label == "Get Involved"? 
                     // dropDown
-                (<div key={label} className="px-4 py-2 relative group">
+                (<div key={label} className="px-4 py-2 relative group">        
                     {/* Trigger */}
                     <span className="font-normal flex items-center gap-1 cursor-pointer hover:text-(--primary-color)">
                         Get Involved
@@ -61,8 +61,8 @@ const dropDownList = [
                     <div className="absolute left-0 mt-2 flex flex-col gap-2 bg-white
                                     opacity-0 translate-y-2
                                     group-hover:opacity-100 group-hover:translate-y-0
-                                    transition-all duration-300
-                                    pointer-events-none group-hover:pointer-events-auto z-50 w-max rounded-lg" >
+                                    transition-all duration-300 
+                                    pointer-events-none group-hover:pointer-events-auto z-50" >
                         {dropDownList.map(({ href, label, target, rel }) =>
                         label === "Become a Sponsor" ? (
                             <a
@@ -116,13 +116,13 @@ const dropDownList = [
             {!openTab ? (
               <GiHamburgerMenu
                 size={25}
-                className="cursor-pointer text-black"
+                className="cursor-pointer text-(--nav-color)"
                 onClick={() => setOpenTab(true)}
               />
             ) : (
               <FaX
                 size={25}
-                className="cursor-pointer text-black"
+                className="cursor-pointer text-(--nav-color)"
                 onClick={() => setOpenTab(false)}
               />
             )}
@@ -136,28 +136,27 @@ const dropDownList = [
             openTab ? "max-h-[500px]" : "max-h-0"
           }`}
         >
-          <div className="flex flex-col gap-2 py-4 text-black bg-white shadow-md">
+          <div className="flex flex-col gap-2 py-4 text-(--nav-color) bg-white shadow-md">
              {navList.map(({ to, label }) => (
-                label == "Get Involved"?
-                //  Dropdown
+                label == "Get Involved"? 
+                //  Dropdown 
             (<div >
-                <span
+                <span 
                 onClick={() => setDropDown(!dropDown)}
-                className="px-4 py-2 rounded-lg hover:bg-(--primary-color) hover:text-white
+                className="px-4 py-2 rounded-lg hover:bg-(--primary-color) hover:text-white 
                 transition-all duration-300 flex items-center gap-1 cursor-pointer ">
                         Get Involved
-                        <FiChevronDown size={14} className="group-hover:hidden" />
-                        <FiChevronUp size={14} className="hidden group-hover:inline-block" />
+                        {dropDown ? <FiChevronUp size={14} /> : <FiChevronDown size={14} />}
                 </span>
-
+            
               {dropDown && (
                 <div className="mt-2 ml-2 flex flex-col gap-2">
                     {dropDownList.map(({ href, label, target, rel, }) => (
-                label == "Become a Sponsor"?
+                label == "Become a Sponsor"? 
                 <a  key={href}
                     href={href}
                     download
-                    className="px-4 py-2  rounded-lg hover:bg-[#F63A0A] hover:text-white transition-all duration-300"
+                    className="px-4 py-2  rounded-lg hover:bg-(--primary-color) hover:text-white transition-all duration-300"
                 >
                     {label}
                 </a>
@@ -166,7 +165,7 @@ const dropDownList = [
                     href={href}
                     target={target}
                     rel={rel}
-                    className="px-4 py-2 rounded-lg hover:bg-[#F63A0A] hover:text-white transition-all duration-300"
+                    className="px-4 py-2 rounded-lg hover:bg-(--primary-color) hover:text-white transition-all duration-300"
                 >
                     {label}
                 </a>
@@ -183,7 +182,7 @@ const dropDownList = [
             >
                 {label}
             </NavLink>)
-            ))}
+            ))}            
           </div>
         </div>
         </div>
