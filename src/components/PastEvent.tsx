@@ -35,14 +35,14 @@ function PastEvent() {
             transition: { staggerChildren: 0.25 },
           },
         }}
-        className="hidden md:block"
+        className="hidden lg:block"
       >
         {/* IMAGE 1 */}
         <motion.img
           variants={{ hidden: { y: 60 }, show: { y: 0 } }}
           src="/past-events-img-1.jpg"
           alt="Past event"
-          className="absolute top-10 right-32 w-[360px] h-[280px] object-cover rounded-xl border-4 rotate-[6deg] shadow-xl"
+          className="absolute top-15 right-32 w-[360px] h-[280px] object-cover rounded-xl border-4 rotate-[8deg] shadow-xl z-30"
         />
 
         {/* IMAGE 2 */}
@@ -50,7 +50,7 @@ function PastEvent() {
           variants={{ hidden: { y: 60 }, show: { y: 0 } }}
           src="/past-events-img-2.jpg"
           alt="Past event"
-          className="absolute top-[330px] right-24 w-[360px] h-[280px] object-cover rounded-xl border-4 rotate-[18deg] shadow-xl"
+          className="absolute top-[350px] right-24 w-[360px] h-[280px] object-cover rounded-xl border-4 rotate-[10deg] shadow-xl z-20"
         />
 
         {/* IMAGE 3 */}
@@ -58,7 +58,7 @@ function PastEvent() {
           variants={{ hidden: { y: 60 }, show: { y: 0 } }}
           src="/past-events-img-3.jpg"
           alt="Past event"
-          className="absolute bottom-20 left-100 w-[360px] h-[280px] object-cover rounded-xl border-4 rotate-[-10deg] shadow-xl"
+          className="absolute bottom-30 left-106 w-[360px] h-[280px] object-cover rounded-xl border-4 rotate-[-10deg] shadow-xl z-10"
         />
 
         {/* IMAGE 4 */}
@@ -66,34 +66,34 @@ function PastEvent() {
           variants={{ hidden: { y: 60 }, show: { y: 0 } }}
           src="/past-events-img-4.jpg"
           alt="Past event"
-          className="absolute bottom-40 left-10 w-[360px] h-[280px] object-cover rounded-xl border-4 rotate-[12deg] shadow-xl"
+          className="absolute bottom-25 left-10 w-[360px] h-[280px] object-cover rounded-xl border-4 rotate-[12deg] shadow-xl"
         />
       </motion.div>
 
-      {/* MOBILE VERSION - DIAGONAL STACK */}
+      {/* MOBILE & TABLET VERSION - DIAGONAL STACK */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="md:hidden flex items-center justify-center mt-10 relative h-[420px]"
+        className="lg:hidden flex items-center justify-center mt-10 relative h-[420px]"
       >
         {/* Mobile images stack diagonally */}
         <img
           src="/past-events-img-1.jpg"
-          className="absolute w-56 h-40 object-cover rounded-lg border-4 rotate-[-8deg] shadow-lg top-4 left-10"
+          className="absolute  w-56 md:w-64 h-40 md:h-48  object-cover rounded-lg border-4 rotate-[-8deg] shadow-lg top-4 left-10 md:rotate-[4deg] md:top-6 md:left-10"
         />
         <img
           src="/past-events-img-2.jpg"
-          className="absolute w-56 h-40 object-cover rounded-lg border-4 rotate-[12deg] shadow-lg top-24 right-6"
+          className="absolute w-56 md:w-64 h-40 md:h-48 object-cover rounded-lg border-4 rotate-[12deg] shadow-lg top-24 right-6 md:rotate-[4deg] md:top-0 md:right-6"
         />
         <img
           src="/past-events-img-3.jpg"
-          className="absolute w-56 h-40 object-cover rounded-lg border-4 rotate-[-12deg] shadow-lg bottom-10 left-5"
+          className="absolute  w-56 md:w-64 h-40 md:h-48  object-cover rounded-lg border-4 rotate-[-12deg] shadow-lg bottom-10 left-5 md:bottom-5 md:left-45"
         />
         <img
           src="/past-events-img-4.jpg"
-          className="absolute w-56 h-40 object-cover rounded-lg border-4 rotate-[10deg] shadow-lg bottom-0 right-8"
+          className="absolute  w-56 md:w-64 h-40 md:h-48  object-cover rounded-lg border-4 rotate-[10deg] shadow-lg bottom-0 right-8 md:bottom-5 md:right-8"
         />
       </motion.div>
     </motion.div>

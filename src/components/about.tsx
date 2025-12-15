@@ -38,28 +38,28 @@ const About = () => {
         />
         {/* Bounce animated images */}
         <motion.div
-          className="absolute w-[130px] h-[130px] top-10 left-0 hidden md:block"
+          className="absolute w-[130px] h-[130px] top-10 left-0 hidden lg:block"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
         >
           <img src="/about-event-img1.png" alt="About event image" />
         </motion.div>
         <motion.div
-          className="absolute w-[130px] h-[130px] bottom-10 right-20 hidden md:block"
+          className="absolute w-[130px] h-[130px] bottom-10 right-20 hidden lg:block"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
         >
           <img src="/about-event-img2.png" alt="About event image" />
         </motion.div>
         <motion.div
-          className="absolute w-[130px] h-[130px] top-20 right-10 hidden md:block"
+          className="absolute w-[130px] h-[130px] top-20 right-10 hidden lg:block"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}
         >
           <img src="/about-event-img3.png" alt="About event image" />
         </motion.div>
         <motion.div
-          className="absolute w-[130px] h-[130px] bottom-5 left-20 hidden md:block"
+          className="absolute w-[130px] h-[130px] bottom-5 left-20 hidden lg:block"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         >
