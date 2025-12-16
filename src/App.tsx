@@ -33,6 +33,8 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           {/* uncomment each of the route once page is created */}
+          <Route path="about" element={<About />} />
+          {/* <Route path="speakers" element={<Speakers />} /> */}
           {/* <Route path="about" element={<About />} /> */}
           <Route path="speakers" element={<Speakers />} />
           {/* <Route path="faq" element={<Faq />} /> */}
