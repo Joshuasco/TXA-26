@@ -38,28 +38,28 @@ const About = () => {
         />
         {/* Bounce animated images */}
         <motion.div
-          className="absolute w-[130px] h-[130px] top-10 left-0 hidden md:block"
+          className="absolute w-[130px] h-[130px] top-10 left-0 hidden lg:block"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
         >
           <img src="/about-event-img1.png" alt="About event image" />
         </motion.div>
         <motion.div
-          className="absolute w-[130px] h-[130px] bottom-10 right-20 hidden md:block"
+          className="absolute w-[130px] h-[130px] bottom-10 right-20 hidden lg:block"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
         >
           <img src="/about-event-img2.png" alt="About event image" />
         </motion.div>
         <motion.div
-          className="absolute w-[130px] h-[130px] top-20 right-10 hidden md:block"
+          className="absolute w-[130px] h-[130px] top-20 right-10 hidden lg:block"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}
         >
           <img src="/about-event-img3.png" alt="About event image" />
         </motion.div>
         <motion.div
-          className="absolute w-[130px] h-[130px] bottom-5 left-20 hidden md:block"
+          className="absolute w-[130px] h-[130px] bottom-5 left-20 hidden lg:block"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         >
@@ -76,7 +76,6 @@ const About = () => {
           <div className="flex items-center justify-between w-full">
             <div className="hidden md:block"></div>
             <h2 className="font-semibold text-center text-4xl">
-
               What to expect at Tech X Africa 2026
             </h2>
             <div className=" hidden md:flex  items-center gap-2">
@@ -125,7 +124,12 @@ const About = () => {
             <div className="w-full flex flex-row gap-8 overflow-x-auto overflow-y-hidden hide-scrollbar max-w-full md:grid md:grid-cols-4 md:gap-3.5">
               <AnimatePresence>
                 {/* First row: 4 cards */}
-                {["Emerging Tech (AI & ML)", "The Creative Economy", "Entering Tech", "The Future of Community"].map((title, idx) => (
+                {[
+                  "Emerging Tech (AI & ML)",
+                  "The Creative Economy",
+                  "Entering Tech",
+                  "The Future of Community",
+                ].map((title, idx) => (
                   <motion.div
                     key={title}
                     initial={{ opacity: 0, y: 40 }}
@@ -138,7 +142,11 @@ const About = () => {
                 ))}
                 {/* Second row: 3 cards, centered on md screens */}
                 <div className="hidden md:flex col-span-4 w-full justify-center gap-8 mt-4">
-                  {["Building for Open Source", "Building & Problem Solving", "Women Making in Africa Technology ecosytem"].map((title, idx) => (
+                  {[
+                    "Building for Open Source",
+                    "Building & Problem Solving",
+                    "Women Making in Africa Technology ecosytem",
+                  ].map((title, idx) => (
                     <motion.div
                       key={title}
                       initial={{ opacity: 0, y: 40 }}
@@ -152,7 +160,11 @@ const About = () => {
                 </div>
                 {/* On small screens, all cards in a row with scroll */}
                 <div className="flex md:hidden flex-row gap-8">
-                  {["Building for Open Source", "Building & Problem Solving", "Women Making in Africa Technology ecosytem"].map((title, idx) => (
+                  {[
+                    "Building for Open Source",
+                    "Building & Problem Solving",
+                    "Women Making in Africa Technology ecosytem",
+                  ].map((title, idx) => (
                     <motion.div
                       key={title}
                       initial={{ opacity: 0, y: 40 }}

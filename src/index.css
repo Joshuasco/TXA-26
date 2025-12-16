@@ -3,8 +3,8 @@
 
 /* custom colors */
 :root {
-  --nav-color:#403A3A;
-  --primary-color:#F63A0A
+  --nav-color: #403a3a;
+  --primary-color: #f63a0a;
 }
 
 /* NEXA Font Family - Complete Weight Range */
@@ -225,12 +225,11 @@ body {
   margin: 0;
 }
 
-
 /* Hide scrollbar but allow scrolling */
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari, Opera */
+  display: none; /* Chrome, Safari, Opera */
 }
