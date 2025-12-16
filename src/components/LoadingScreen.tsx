@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 
-
 type LoadingScreenProps = {
   isLoading: boolean;
 };
 
 export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
-const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     if (!isLoading) {
@@ -19,7 +18,6 @@ const [isVisible, setIsVisible] = useState(true);
   }, [isLoading]);
 
   if (!isVisible) return null;
-
 
   return (
     <div

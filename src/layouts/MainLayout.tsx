@@ -8,13 +8,11 @@ import Speakers from "../components/Speakers";
 import GetInvolved from "../components/GetInvolved";
 import PartnersAndSponsors from "../components/PartnersAndSponsors";
 
-
-
 function MainLayout() {
   return (
     <div>
       <Header />
-      <Outlet />  {/* ← Page content goes here */}
+      <Outlet /> {/* ← Page content goes here */}
       <div id="about">
         <About />
       </div>

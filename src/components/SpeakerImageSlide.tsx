@@ -18,11 +18,8 @@ function SpeakerImageSlide({ imageSrc, name, description }: Props) {
 
         <p className="text-gray-700">{description}</p>
 
-        <button className="bg-[#F63A0A] text-white px-6 py-3">
-          View Bio
-        </button>
+        <button className="bg-[#F63A0A] text-white px-6 py-3">View Bio</button>
       </div>
-
     </div>
   );
 }

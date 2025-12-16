@@ -100,7 +100,6 @@ const Speakers = () => {
 
       {/* DOTS FOR SPEAKER DETAILS */}
       <div className="flex flex-col md:flex-row self-center justify-center md:justify-between items-center w-full px-4 md:px-0 gap-3">
-
         {/* Left placeholder for md screens */}
         <div className="hidden md:flex"></div>
 

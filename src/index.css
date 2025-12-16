@@ -3,8 +3,8 @@
 
 /* custom colors */
 :root {
-  --nav-color:#403A3A;
-  --primary-color:#F63A0A
+  --nav-color: #403a3a;
+  --primary-color: #f63a0a;
 }
 
 /* NEXA Font Family - Complete Weight Range */
@@ -225,12 +225,58 @@ body {
   margin: 0;
 }
 
-
 /* Hide scrollbar but allow scrolling */
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari, Opera */
+  display: none; /* Chrome, Safari, Opera */
 }
+
+
+
+/*GET TICKET CUSTOM CSS */
+
+/* SIDE PERFORATION (SCISSORS CUT) */
+.mask-ticket-sides {
+  mask:
+    radial-gradient(circle 12px at left 40px, transparent 98%, black 100%) repeat-y,
+    radial-gradient(circle 12px at right 40px, transparent 98%, black 100%) repeat-y;
+  mask-size: 100% 48px;
+  mask-composite: exclude;
+}
+
+
+
+/* BOTTOM SCALLOPED (UMBRELLA CURVE — GUARANTEED EDGE SPACING) */
+.mask-ticket-bottom {
+  mask:
+    /* 1️⃣ Main body */
+    linear-gradient(black, black) top,
+
+    /* 2️⃣ Left & right gutters (blocks scallops at edges) */
+    linear-gradient(
+      to right,
+      black 0%,
+      black 4%,
+      transparent 4%,
+      transparent 96%,
+      black 96%,
+      black 100%
+    ) bottom,
+
+    /* 3️⃣ Scallops */
+    radial-gradient(circle 14px at 50% 100%, transparent 98%, black 100%) bottom;
+
+  mask-size:
+    100% calc(100% - 18px), /* body */
+    100% 18px,              /* gutters */
+    36px 18px;              /* scallop spacing */
+
+  mask-repeat:
+    no-repeat,
+    no-repeat,
+    repeat-x;
+}
+
