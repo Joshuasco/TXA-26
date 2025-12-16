@@ -116,6 +116,6 @@ export default function ContactUs() {
           </button>
         </form>
       </div>
-  </motion.div>
+    </motion.div>
   );
 }

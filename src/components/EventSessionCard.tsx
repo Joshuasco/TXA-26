@@ -29,11 +29,15 @@ function EventSessionCard({
           className="w-full h-full object-cover"
         />
         {/* Gradient Overlay */}
-    <div className="absolute inset-0 bg-linear-to-b from-transparent to-[rgba(0,0,0,0.78)]"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-transparent to-[rgba(0,0,0,0.78)]"></div>
         {/* Text */}
         <div className="absolute bottom-4 left-4 flex flex-col gap-2">
-          <h2 className="font-semibold text-lg md:text-2xl text-white">{heading}</h2>
-          <p className="text-white text-xs md:text-sm font-light w-[180px] md:w-[250px]">{description}</p>
+          <h2 className="font-semibold text-lg md:text-2xl text-white">
+            {heading}
+          </h2>
+          <p className="text-white text-xs md:text-sm font-light w-[180px] md:w-[250px]">
+            {description}
+          </p>
         </div>
       </div>
     </div>
