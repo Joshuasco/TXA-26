@@ -13,7 +13,6 @@ function MediaOpinionCard({
 }: MediaOpinionCardProps) {
   return (
     <div className="relative h-[300px] md:h-[320px] w-[280px] md:w-[361px] shrink-0">
-
       {/* BACKGROUND COLORED BLOCK (BEHIND) */}
       {color && (
         <div
