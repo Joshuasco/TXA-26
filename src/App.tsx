@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Speakers from "./pages/Speakers";
 // import Faq from "./pages/Faq";
 // import Market from "./pages/Market";
+import Market from "./pages/Market";
 
 import { Routes, Route } from "react-router-dom";
 import LoadingScreen from "./components/LoadingScreen";
@@ -44,7 +45,7 @@ function App() {
           <Route path="speakers" element={<Speakers />} />
           {/* <Route path="faq" element={<Faq />} /> */}
           {/* <Route path="market" element={<Market />} /> */}
-
+          <Route path="market" element={<Market />} />
         </Route>
       </Routes>
     </div>
