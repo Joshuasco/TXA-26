@@ -1,8 +1,10 @@
 import React from "react";
 import { useRef } from "react";
+import Barcode from "react-barcode";
 import { motion, useInView } from "framer-motion";
 import TXA_logo from "../assets/images/TXA_logo.png";
-import { FaScissors } from "react-icons/fa6"; // ✅ ADDED
+import { FaScissors } from "react-icons/fa6"; 
+import { HiArrowLongRight } from "react-icons/hi2";
 
 export interface TicketCardProps {
   title: string;
@@ -30,19 +32,36 @@ const TicketCard: React.FC<TicketCardProps> = ({
     animate={inView ? { opacity: 1, y: 0 } : {}}
     transition={{ duration: 0.8, ease: "easeOut" }}
     className={`
-    relative w-[360px] rounded-t-2xl py-6 px-3 flex flex-col justify-between 
+    relative w-[360px] rounded-t-2xl py-6 px-4 flex flex-col justify-between 
     ${bgColor}
-    mask-ticket-sides mask-ticket-bottom
+
     `}
     >
       {/* ✅ Scissors Icon */}
       <FaScissors
         className="
-          absolute right-[3px] top-[410px] rotate-[115deg]
+          absolute right-[3px] top-[405px] rotate-[125deg]
            text-black/70 z-20
         "
-        size={18}
+        size={22}
       />
+      {/* sides semi-circle cut */}
+    <div className="absolute top-[400px] left-[-22px] bg-white h-10 w-10 rounded-full"></div>
+    <div className="absolute top-[400px] right-[-22px] bg-white h-10 w-10 rounded-full"></div>
+        {/* bttom semi-circle cut */}
+    <div className="flex absolute bottom-[-10px] gap-3 left-[10px] ">
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+        <div className=" bg-white h-5 w-5 rounded-full"></div>
+    </div>
 
       {/* Top Section */}
       <div>
@@ -54,10 +73,10 @@ const TicketCard: React.FC<TicketCardProps> = ({
         />
 
         {/* Title */}
-        <h2 className="text-xl font-bold mb-2">
+        <h2 className="text-xl font-extrabold mb-2">
           {title}{" "}
           <span>
-            ({price})
+            {price}
           </span>
         </h2>
 
@@ -71,10 +90,11 @@ const TicketCard: React.FC<TicketCardProps> = ({
           {benefits.map((item, index) => (
             <li
               key={index}
-              className="flex items-start gap-2 text-sm"
-            >
-              <span>→</span>
+              className="flex items-start  text-sm"
+            ><div className="flex items-center gap-2">
+              <span><HiArrowLongRight size={22}/></span>
               <span className="font-extrabold">{item}</span>
+            </div>
             </li>
           ))}
         </ul>
@@ -90,14 +110,25 @@ const TicketCard: React.FC<TicketCardProps> = ({
       </div>
 
       {/* Footer */}
-      <div className="mt-8 text-center">
+      <div className="  mt-6 text-center px-3">
         {/* Perforation */}
-        <div className="border-t border-dashed border-black my-5" />
+        <div className=" border-t border-dashed border-black mt-4.5 mb-3" />
 
         {/* Barcode */}
-        <div className="h-10 w-full bg-[repeating-linear-gradient(90deg,#000,#000_2px,transparent_2px,transparent_4px)] mb-2" />
-
-        <p className="text-xs text-black">
+        <div 
+        className="flex  justify-center text-sm">
+        <Barcode
+        value="https://txa-26.vercel.app/"
+        format="CODE128"
+        renderer="svg"
+        width={0.6}
+        height={45}
+        background="transparent"
+        lineColor="#000"
+        displayValue={false}
+      />
+      </div>
+        <p className="text-xs mt-[-10px]  text-black">
           Tech X Africa.com
         </p>
       </div>

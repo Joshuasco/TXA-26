@@ -5,6 +5,7 @@ import Faq from "./pages/Faq";
 import About from "./pages/About";
 import Speakers from "./pages/Speakers";
 // import Market from "./pages/Market";
+import Market from "./pages/Market";
 
 import { Routes, Route } from "react-router-dom";
 import LoadingScreen from "./components/LoadingScreen";
@@ -20,7 +21,7 @@ function App() {
       });
     } else {
       // Fallback timer
-      const timer = setTimeout(() => setIsLoading(false), 1500);
+      const timer = setTimeout(() => setIsLoading(false), 0);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -36,7 +37,7 @@ function App() {
           <Route path="faq" element={<Faq />} />
           <Route path="speakers" element={<Speakers />} />
           <Route path="get-your-ticket" element={<GetTicket />} />
-          {/* <Route path="market" element={<Market />} /> */}
+          <Route path="market" element={<Market />} />
         </Route>
       </Routes>
     </div>
