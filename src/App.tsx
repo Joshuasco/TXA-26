@@ -20,7 +20,7 @@ function App() {
       });
     } else {
       // Fallback timer
-      const timer = setTimeout(() => setIsLoading(false), 1500);
+      const timer = setTimeout(() => setIsLoading(false), 0);
       return () => clearTimeout(timer);
     }
   }, []);
