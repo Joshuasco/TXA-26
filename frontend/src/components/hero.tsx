@@ -14,6 +14,7 @@ import { motion, wrap } from "framer-motion";
 
 import Splide, { Splide as SplideType } from "@splidejs/splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import { Link, Links } from "react-router-dom";
 
 const slides = [hero1, hero2, hero3, hero4, hero5, hero6];
 
@@ -97,9 +98,11 @@ const Hero = () => {
             <h2 className="font-bold text-5xl md:text-5xl md:w-xl">
               BEYOND THE BOX, INNOVATION AND CREATIVITY
             </h2>
-            <button className="bg-[#F63A0A] w-full md:w-[40%] py-3 md:py-4 px-8 flex items-center justify-center cursor-pointer text-white hover:bg-[#e63500] transition">
+            {/* <button className="bg-[#F63A0A] w-full md:w-[40%] py-3 md:py-4 px-8 flex items-center justify-center cursor-pointer text-white hover:bg-[#e63500] transition">
               Get Your Ticket{" "}
-            </button>
+            </button> */}
+            <Link className="bg-[#F63A0A] w-full md:w-[40%] py-3 md:py-4 px-8 flex items-center justify-center cursor-pointer text-white hover:bg-[#e63500] transition"
+             to="/get-your-ticket" >Get Your Ticket</Link>
           </div>
 
           <div className="mt-20 md:mt-12">
