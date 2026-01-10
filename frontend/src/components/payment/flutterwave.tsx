@@ -1,3 +1,4 @@
+declare var FlutterwaveCheckout: any;
 
 import axios from "axios";
 
