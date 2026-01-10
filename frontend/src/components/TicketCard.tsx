@@ -103,7 +103,7 @@ const TicketCard: React.FC<TicketCardProps> = ({
         <button
           type="button"
           onClick={onButtonClick}
-          className="bg-(--primary-color) text-white py-2 px-4 hover:opacity-90 transition"
+          className="bg-(--primary-color) text-white  md:mt-0 py-2 px-4 hover:opacity-90 transition"
         >
           Buy Ticket
         </button>
