@@ -37,7 +37,7 @@ function App() {
           <Route path="faq" element={<Faq />} />
           <Route path="speakers" element={<Speakers />} />
           <Route path="get-your-ticket" element={<GetTicket />} />
-          <Route path="market" element={<Market />} />
+          <Route path="swag-order" element={<Market />} />
         </Route>
       </Routes>
     </div>
