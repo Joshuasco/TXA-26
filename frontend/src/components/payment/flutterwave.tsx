@@ -9,8 +9,8 @@ interface PayNowProps {
 }
 
 const payNow = async ({ email, phone, price, orderId }: PayNowProps) => {
-  // 1️⃣ Create order in backend
-
+  
+  // Create order in backend
   await axios.post("http://localhost:8000/create-order", {
     orderId,
     type: "ticket",
@@ -31,8 +31,7 @@ const payNow = async ({ email, phone, price, orderId }: PayNowProps) => {
   });
 
 
-  // 2️⃣ Open Flutterwave modal
-  // @ts-ignore
+  //  Open Flutterwave modal
   FlutterwaveCheckout({
     public_key: import.meta.env.VITE_FLUTTERWAVE_PUBLIC_KEY,
     tx_ref: orderId,

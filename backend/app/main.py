@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from pydantic import BaseModel
+from .models import Order
 import requests
 import os
 from datetime  import datetime, timezone 
@@ -37,19 +37,7 @@ app.add_middleware(
     allow_headers=["*"],    # allow any headers like Content-Type
 )
 
-# pydantic data model definition
-class Item(BaseModel):
-    name: str
-    price: int
-    quantity: int
 
-class Order(BaseModel):
-    orderId: str
-    type: str
-    items: list[Item]
-    email: str
-    phone: str
-    amount: int
 
 
 #Create Order instance on DB
