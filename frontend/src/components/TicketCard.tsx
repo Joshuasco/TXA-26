@@ -40,14 +40,14 @@ const TicketCard: React.FC<TicketCardProps> = ({
       {/* ✅ Scissors Icon */}
       <FaScissors
         className="
-          absolute right-[3px] top-[405px] rotate-[125deg]
+          absolute right-[3px] top-[455px] md:top-[405px] rotate-[125deg]
            text-black/70 z-20
         "
         size={22}
       />
       {/* sides semi-circle cut */}
-    <div className="absolute top-[400px] left-[-22px] bg-white h-10 w-10 rounded-full"></div>
-    <div className="absolute top-[400px] right-[-22px] bg-white h-10 w-10 rounded-full"></div>
+    <div className="absolute top-[450px] md:top-[400px] left-[-22px] bg-white h-10 w-10 rounded-full"></div>
+    <div className="absolute top-[450px] md:top-[400px] right-[-22px] bg-white h-10 w-10 rounded-full"></div>
         {/* bttom semi-circle cut */}
     <div className="flex absolute bottom-[-10px] gap-3 left-[10px] ">
         <div className=" bg-white h-5 w-5 rounded-full"></div>
@@ -81,7 +81,7 @@ const TicketCard: React.FC<TicketCardProps> = ({
         </h2>
 
         {/* Description */}
-        <p className="text-sm mb-6">
+        <p className=" md:text-sm mb-6">
           {description}
         </p>
 

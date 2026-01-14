@@ -10,6 +10,7 @@ import Market from "./pages/Market";
 import { Routes, Route } from "react-router-dom";
 import LoadingScreen from "./components/LoadingScreen";
 import MainLayout from "./layouts/MainLayout";
+import OrderReceipt from "./pages/orderReceipt";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,6 +39,7 @@ function App() {
           <Route path="speakers" element={<Speakers />} />
           <Route path="get-your-ticket" element={<GetTicket />} />
           <Route path="swag-order" element={<Market />} />
+          <Route path="receipt" element={<OrderReceipt/>} />
         </Route>
       </Routes>
     </div>
