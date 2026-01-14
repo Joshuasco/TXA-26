@@ -13,6 +13,7 @@ from .generateWhastsappLink import generate_whatsapp_link
 # ------------------------
 load_dotenv()
 FLW_SECRET_KEY = os.getenv("FLUTTERWAVE_SECRET_KEY")
+GOOGLE_CREDS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 
 # Firestore client
 db = firestore.Client()
@@ -37,17 +38,18 @@ app.add_middleware(
     allow_headers=["*"],    # allow any headers like Content-Type
 )
 
-
-
+#ping point to keep render server active
+@app.get("/health")
+def health_check():
+    return {"status": "active"}
 
 #Create Order instance on DB
 @app.post("/create-order")
 def create_order(order: Order):
-    db.collection("orders").document(order.orderId).set({
+    print(f'GOOGLE CREDENTIALS = {GOOGLE_CREDS}')
+    print(f'order datas = {order}')
+    db.collection("orders").document(order.order_id).set({
         **order.dict(),
-        "order_id": order.orderId,
-        "status": "pending",
-        "wa_link": "",
         "createdAt": datetime.now(timezone.utc).isoformat(),
     })
     return {"status": "order created"}
@@ -69,7 +71,6 @@ def webhook(payload: dict):
     result = requests.get(verify_url, headers=headers).json()
     print(f'API PAYMENT VERIFICATION DTAS = {result}') #output returned datas in terminal
 
-    
     # fetch firebase db
     status = result.get("status")
     order_ref = db.collection("orders").document(tx_ref)
