@@ -15,9 +15,8 @@ const Header = () => {
     { to: "/about", label: "About Us" },
     { to: "/speakers", label: "Speakers" },
     { to: "/#", label: "Get Involved" },
-    { to: "/past-events", label: "Past Events" },
+    {to: "/swag-order", label: "Swag Order"},
     { to: "/faq", label: "FAQs" },
-    {to: "/swag-order", label: "Swag Order"}
   ];
   const dropDownList = [
     {

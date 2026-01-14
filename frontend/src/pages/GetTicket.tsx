@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import TicketCard from "../components/TicketCard";
-import payNow from "../components/payment/flutterwave";
+// import payNow from "../components/payment/flutterwave";
+import CheckoutContactForm from "../components/checkoutContactForm";
+import type { OrderProps } from "../api/creatOrder";
+import createOrder from "../api/creatOrder";
+import payNow from "../payment/Flutterwave";
 
-import { doc, onSnapshot } from "firebase/firestore";
-import {db} from "../firebase/firebaseConfig"; 
 
 export interface ContactForm {
   email: string;
@@ -13,8 +15,6 @@ export interface ContactForm {
 
 const GetTicket = () => {
   const [showForm, setShowForm] = useState<Boolean>(false);
-  const [currentOrderId, setCurrentOrderId] = useState<string | null>(null);
-
   const [form, setForm] = useState<ContactForm>({
     email: "",
     phone: "",
@@ -27,66 +27,33 @@ const GetTicket = () => {
   }, [form.price]);
 
 
-//   useEffect(() => {
-//   const savedId = localStorage.getItem("pendingOrderId");
-//     if (savedId) {
-//         console.log("Restoring session for order:", savedId);
-//         setCurrentOrderId(savedId);
-//     }
-//     }, []);
-
-
-  // 🔹  Listen for backend-verified payment
-  useEffect(() => {
-  if (!currentOrderId) return;
-
-  const ref = doc(db, "orders", currentOrderId);
-  const unsubscribe = onSnapshot(ref, (snap) => {
-    // if (!snap.exists()) return;
-    if (!snap.exists()) {
-      console.log("Waiting for backend to create order document...");
-      return;
-    }
-
-    const data = snap.data();
-    console.log("Current Firestore Data:", data);
-    if (data.status === "success") {
-      alert("Payment successful! Click OK to open your receipt on WhatsApp.");
-      if (data.wa_link) window.open(data.wa_link, "_blank");
-      unsubscribe()
-    }
-    if (data.status === "failed") {
-        alert("Payment failed ❌! Click OK to open your receipt on WhatsApp.");
-        if (data.wa_link) window.open(data.wa_link, "_blank");
-        setCurrentOrderId(null);
-        unsubscribe()
-      }
-
-  });
-
-  return () => 
-        // CLEAN UP: Clear storage and state so the alert doesn't keep popping up
-        // localStorage.removeItem("pendingOrderId");
-        unsubscribe();
-}, [currentOrderId]);
-
 
   
 
   // 🔹 Handles payment start
-  const handlePayment = () => {
-    const orderId = `ORD-${Date.now()}`;
+   const handlePayment = async () => {
+    const order: OrderProps = {
+      order_id: `ORD-${Date.now()}`,
+      type: "ticket",
+      email: form.email,
+      phone: form.phone,
+      amount: form.price,
+      items: [
+        {
+          name: form.price === 15000 ? "VIP Ticket" : "Standard Ticket",
+          price: form.price,
+          quantity: 1,
+        },
+      ],
+    };
+//create Order request on the backend
+    const create_order = createOrder(order)
+    console.log('created order status = ', create_order)
 
-    console.log("form uploaded details:", form);
-    // Save to localStorage so it survives a reload
-    // localStorage.setItem("pendingOrderId", orderId);
-    setCurrentOrderId(orderId);
-
-    payNow({
-      ...form,
-      orderId, // passed to flutterwave + backend
-    });
-  };
+    //call flutterwavecheckout payment
+    payNow(order)
+  }
+ 
 
   return (
     <div className="my-10 mx-4">
@@ -137,59 +104,22 @@ const GetTicket = () => {
       </div>
 
       {/* Contact Form */}
+     {/* 🔹 Extracted Contact Form */}
       {showForm && (
-        <div className="absolute inset-0">
-          <div className="flex justify-end items-end w-3/4 mx-auto">
-            <button
-              className="flex justify-center items-center w-10 h-10 bg-gray-200 mt-48 right-0 rounded-full"
-              onClick={() => setShowForm(false)}
-            >
-              x
-            </button>
-          </div>
+        <CheckoutContactForm
+          email={form.email}
+          phone={form.phone}
+          onEmailChange={(email) =>
+            setForm((prev) => ({ ...prev, email }))
+          }
+          onPhoneChange={(phone) =>
+            setForm((prev) => ({ ...prev, phone }))
+          }
+          onSubmit={handlePayment}
+          onClose={() => setShowForm(false)}
+        />
+      )}//end form
 
-          <div className="flex flex-col mt-4 bg-white border-2 gap-4 rounded-2xl p-4 w-3/4 mx-auto border-(--primary-color)">
-            <div>
-              Kindly fill in your details below to complete your order
-            </div>
-
-            <hr className="border-gray-200" />
-
-            <div className="flex flex-col">
-              <label>Email:</label>
-              <input
-                type="text"
-                placeholder="johndoes@gmail.com"
-                value={form.email}
-                className="h-8 rounded-xl p-2 border-1 border-(--primary-color)"
-                onChange={(e) =>
-                  setForm({ ...form, email: e.target.value })
-                }
-              />
-            </div>
-
-            <div className="flex flex-col">
-              <label>WhatsApp No:</label>
-              <input
-                type="text"
-                placeholder="2347054974199"
-                value={form.phone}
-                className="h-8 rounded-xl p-2 border-1 border-(--primary-color)"
-                onChange={(e) =>
-                  setForm({ ...form, phone: e.target.value })
-                }
-              />
-            </div>
-
-            <button
-              className="bg-(--primary-color) rounded-xl p-2 text-white"
-              onClick={handlePayment}
-            >
-              Make Payment
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
