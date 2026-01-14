@@ -28,4 +28,3 @@ backend/.env
 backend/google-creds.json
 .env
 .env.*
-"backend/google-creds.json" 
