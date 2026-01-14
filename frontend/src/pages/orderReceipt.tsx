@@ -15,7 +15,7 @@ const OrderReceipt = () => {
     
     if (!order_id) {
       setLoading(false);
-      setError("Opps, are you sure you made this payemtn? if yes contact the TXA team");
+      setError("Opps, are you sure you made this payemnt? if yes contact the TXA team");
       return;
     }
 
@@ -29,10 +29,7 @@ const OrderReceipt = () => {
         const data = docSnap.data() as OrderProps;
         setOrderData(data);
         setLoading(false); // Stop loading once data arrives
-      } else {
-        // Document doesn't exist YET. We stay in loading state.
-        console.log("Order document not created yet, waiting...");
-      }
+      } 
     }, (err) => {
       console.error("Firestore error:", err);
       setLoading(false);
@@ -69,7 +66,7 @@ const OrderReceipt = () => {
                <a 
                 href={orderData.wa_link} 
                 target="_blank" 
-                className="mt-6 block w-full bg-green-500 text-white text-center py-3 rounded-xl font-bold hover:bg-green-600 transition-colors"
+                className="mt-6 block w-full bg-(--primary-color) text-white text-center py-3 rounded-xl font-bold hover:bg-green-600 transition-colors"
                >
                  Get Receipt on WhatsApp
                </a>
@@ -78,7 +75,7 @@ const OrderReceipt = () => {
         </div>
       ) : (
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-orange-500">Status: {orderData.status}</h1>
+          <h1 className="text-2xl font-bold text-(--primary-color)">Status: {orderData.status}</h1>
           <p className="text-gray-600 mt-2">We are processing your payment. Please wait or refresh.</p>
         </div>
       )}

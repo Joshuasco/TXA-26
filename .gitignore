@@ -26,5 +26,4 @@ dist-ssr
 frontend/.env
 backend/.env
 backend/google-creds.json
-.env
-.env.*
+config.bat
