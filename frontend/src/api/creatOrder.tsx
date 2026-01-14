@@ -18,7 +18,7 @@ export interface OrderProps{
 }
 
 
-// Create order in backend
+// Create order api request in backend
 const createOrder = async (order:OrderProps) => {
   const  create_order_url = import.meta.env.VITE_CREATE_ORDER_URL
   const res = await axios.post(create_order_url, 

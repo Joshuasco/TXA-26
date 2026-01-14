@@ -53,21 +53,7 @@ const GetTicket = () => {
     //call flutterwavecheckout payment
     payNow(order)
   }
-  // const handlePayment = () => {
-  //   const order_id = `ORD-${Date.now()}`;
-
-  //   console.log("form uploaded details:", form);
-  //   // Save to localStorage so it survives a reload
-  //   localStorage.setItem("pendingorder_id", order_id);
-  //   // setCurrentorder_id(order_id);
-    
-
-  //   payNow({
-  //     ...form,
-  //     order_id, // passed to flutterwave + backend
-  //     status:"pending"
-  //   });
-  // };
+ 
 
   return (
     <div className="my-10 mx-4">
