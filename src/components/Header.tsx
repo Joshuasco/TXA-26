@@ -22,25 +22,19 @@ const Header = () => {
     {
       href: "https://bit.ly/txavolunteer2025",
       label: "Apply to Volunteer",
-      target: "_blank",
-      rel: "noopener noreferrer",
     },
     {
       href: "/TXA 25 Official Proposal.pdf",
       label: "Become a Sponsor",
-      target: "_blank",
-      rel: "noopener noreferrer",
     },
     {
       href: "https://wa.me/+2348123051357",
       label: "Become a Partner",
-      target: "_blank",
-      rel: "noopener noreferrer",
     },
   ];
 
   return (
-    <nav className="py-2 w-full">
+    <nav className="py-4 w-full">
       <div className=" container w-full  z-50 bg-white  transition-all">
         {/* Header Top */}
         <div className="flex items-center justify-between px-2 md:px  w-full ">
@@ -75,12 +69,12 @@ const Header = () => {
                     {/* Dropdown */}
                     <div
                       className="absolute left-0 mt-2 flex flex-col gap-2 bg-white
-                                    opacity-0 translate-y-2
+                                    opacity-0 translate-y-2 whitespace-nowrap
                                     group-hover:opacity-100 group-hover:translate-y-0
                                     transition-all duration-300
                                     pointer-events-none group-hover:pointer-events-auto z-50"
                     >
-                      {dropDownList.map(({ href, label, target, rel }) =>
+                      {dropDownList.map(({ href, label }) =>
                         label === "Become a Sponsor" ? (
                           <a
                             key={href}
@@ -94,8 +88,8 @@ const Header = () => {
                           <a
                             key={href}
                             href={href}
-                            target={target}
-                            rel={rel}
+                            target= "_blank"
+                            rel= "noopener noreferrer"
                             className="px-4 py-2 hover:text-(--primary-color) transition-all duration-300"
                           >
                             {label}
@@ -171,7 +165,7 @@ const Header = () => {
 
                   {dropDown && (
                     <div className="mt-2 ml-2 flex flex-col gap-2">
-                      {dropDownList.map(({ href, label, target, rel }) =>
+                      {dropDownList.map(({ href, label }) =>
                         label == "Become a Sponsor" ? (
                           <a
                             key={href}
@@ -185,8 +179,8 @@ const Header = () => {
                           <a
                             key={href}
                             href={href}
-                            target={target}
-                            rel={rel}
+                            target= "_blank"
+                            rel= "noopener noreferrer"
                             className="px-4 py-2 rounded-lg hover:bg-(--primary-color) hover:text-white transition-all duration-300"
                           >
                             {label}
