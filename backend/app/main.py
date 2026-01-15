@@ -55,9 +55,9 @@ def create_order(order: Order):
     return {"status": "order created"}
 
 
-# ------------------------
+# -----------------------
 # Webhook endpoint for Flutterwave
-# ------------------------
+# -----------------------
 # webhook url = https://a51331bb6f8d.ngrok-free.app/flutterwave-webhook
 @app.post("/flutterwave-webhook")
 def webhook(payload: dict):
