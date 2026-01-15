@@ -53,7 +53,7 @@ const OrderReceipt = () => {
   }
 
   return (
-    <div className="my-10 mx-auto max-w-md p-6 border rounded-2xl shadow-lg bg-white">
+    <div className="my-10 mx-4 md:mx-auto max-w-md p-6 border-0.5 border-(--primary-color) rounded-2xl shadow-lg bg-white">
       {orderData.status === "success" ? (
         <div className="flex flex-col gap-4 text-center">
           <h1 className="text-3xl font-bold text-green-600">✅ Paid!</h1>
