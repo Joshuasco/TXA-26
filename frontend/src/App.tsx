@@ -4,8 +4,7 @@ import GetTicket from "./pages/GetTicket";
 import Faq from "./pages/Faq";
 import About from "./pages/About";
 import Speakers from "./pages/Speakers";
-// import Market from "./pages/Market";
-import Market from "./pages/Market";
+import SwagOrder from "./pages/SwagOrder";
 
 import { Routes, Route } from "react-router-dom";
 import LoadingScreen from "./components/LoadingScreen";
@@ -38,7 +37,7 @@ function App() {
           <Route path="faq" element={<Faq />} />
           <Route path="speakers" element={<Speakers />} />
           <Route path="get-your-ticket" element={<GetTicket />} />
-          <Route path="swag-order" element={<Market />} />
+          <Route path="swag-order" element={<SwagOrder/>} />
           <Route path="receipt" element={<OrderReceipt/>} />
         </Route>
       </Routes>
