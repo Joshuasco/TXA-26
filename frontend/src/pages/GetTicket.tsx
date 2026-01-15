@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import TicketCard from "../components/TicketCard";
 import CheckoutContactForm from "../components/checkoutContactForm";
 import type { OrderProps } from "../api/creatOrder";
@@ -20,7 +20,7 @@ const GetTicket = () => {
     price: 5000,
   });
 
-  //  Handles payment start
+  //  Handles payment 
    const handlePayment = async () => {
     const order: OrderProps = {
       order_id: `ORD-${Date.now()}`,
