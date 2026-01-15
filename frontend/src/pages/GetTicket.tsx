@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import TicketCard from "../components/TicketCard";
-// import payNow from "../components/payment/flutterwave";
 import CheckoutContactForm from "../components/checkoutContactForm";
 import type { OrderProps } from "../api/creatOrder";
 import createOrder from "../api/creatOrder";
@@ -21,16 +20,7 @@ const GetTicket = () => {
     price: 5000,
   });
 
-  // 🔹 Debug price change (keep as-is)
-  useEffect(() => {
-    console.log("Price changed to:", form.price);
-  }, [form.price]);
-
-
-
-  
-
-  // 🔹 Handles payment start
+  //  Handles payment 
    const handlePayment = async () => {
     const order: OrderProps = {
       order_id: `ORD-${Date.now()}`,
@@ -46,7 +36,8 @@ const GetTicket = () => {
         },
       ],
     };
-//create Order request on the backend
+
+  //create Order request on the backend
     const create_order = createOrder(order)
     console.log('created order status = ', create_order)
 
@@ -54,7 +45,6 @@ const GetTicket = () => {
     payNow(order)
   }
  
-
   return (
     <div className="my-10 mx-4">
       <div className="flex flex-col items-center text-center px-2 gap-2 mb-10">
@@ -104,7 +94,6 @@ const GetTicket = () => {
       </div>
 
       {/* Contact Form */}
-     {/* 🔹 Extracted Contact Form */}
       {showForm && (
         <CheckoutContactForm
           email={form.email}
