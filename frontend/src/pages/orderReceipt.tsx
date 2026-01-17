@@ -41,7 +41,7 @@ const OrderReceipt = () => {
 
   if (loading) {
     return (
-      <div className="p-10 text-center flex flex-col items-center gap-4">
+      <div className="p-10 md:py-12 text-center flex flex-col items-center gap-4">
         <div className="w-10 h-10 border-4 border-blue-200 border-t-(--primary-color) rounded-full animate-spin"></div>
         <p>Confirming your payment details...</p>
       </div>
@@ -49,11 +49,11 @@ const OrderReceipt = () => {
   }
 
   if (error || !orderData) {
-    return <div className="p-10 text-center text-red-500">{error || "Order not found."}</div>;
+    return <div className="p-10 md:py-12 text-center text-red-500">{error || "Order not found."}</div>;
   }
 
   return (
-    <div className="my-10 mx-4 md:mx-auto max-w-md p-6 border-0.5 border-(--primary-color) rounded-2xl shadow-lg bg-white">
+    <div className="my-10 md:py-12 mx-4 md:mx-auto max-w-md p-6 border-0.5 border-(--primary-color) rounded-2xl shadow-xl bg-white">
       {orderData.status === "success" ? (
         <div className="flex flex-col gap-4 text-center">
           <h1 className="text-3xl font-bold text-green-600">✅ Paid!</h1>

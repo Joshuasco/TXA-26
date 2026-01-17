@@ -1,5 +1,4 @@
-import React from "react";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import Barcode from "react-barcode";
 import { motion, useInView } from "framer-motion";
 import TXA_logo from "../assets/images/TXA_logo.png";
@@ -37,7 +36,7 @@ const TicketCard: React.FC<TicketCardProps> = ({
 
     `}
     >
-      {/* ✅ Scissors Icon */}
+      {/* Scissors Icon */}
       <FaScissors
         className="
           absolute right-[3px] top-[455px] md:top-[405px] rotate-[125deg]
