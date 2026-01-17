@@ -13,6 +13,7 @@ export interface ContactForm {
 }
 
 const GetTicket = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [showForm, setShowForm] = useState<Boolean>(false);
   const [form, setForm] = useState<ContactForm>({
     email: "",
@@ -21,7 +22,7 @@ const GetTicket = () => {
   });
 
   //  Handles payment 
-   const handlePayment = async () => {
+   const handleMakePayment = async () => {
     const order: OrderProps = {
       order_id: `ORD-${Date.now()}`,
       type: "ticket",
@@ -36,17 +37,24 @@ const GetTicket = () => {
         },
       ],
     };
-
-  //create Order request on the backend
-    const create_order = createOrder(order)
+    setIsLoading(true)
+    try{
+    //create Order request on the backend
+    const create_order = await createOrder(order);
     console.log('created order status = ', create_order)
-
+    setIsLoading(false)
     //call flutterwavecheckout payment
     payNow(order)
+    } catch(error){
+      alert(`Payment initialization failed,  ${error}`)
+      setIsLoading(false)
+    }
+    
+  
   }
  
   return (
-    <div className="my-10 mx-4">
+    <div className="py-10 md:py-12 mx-4">
       <div className="flex flex-col items-center text-center px-2 gap-2 mb-10">
         <h1 className="font-extrabold text-3xl">
           Secure your Spot at Tech X Africa 2026
@@ -104,10 +112,11 @@ const GetTicket = () => {
           onPhoneChange={(phone) =>
             setForm((prev) => ({ ...prev, phone }))
           }
-          onSubmit={handlePayment}
+          isLoading = {isLoading}
+          onSubmit={handleMakePayment}
           onClose={() => setShowForm(false)}
         />
-      )}//end form
+      )}
 
     </div>
   );
