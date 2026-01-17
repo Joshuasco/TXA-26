@@ -1,7 +1,7 @@
 import { Plus, Minus, Trash2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import CheckoutContactForm from "./CheckoutContactForm";
+import CheckoutContactForm from "./checkoutContactForm";
 import payNow from "../payment/Flutterwave";
 import createOrder,  {type OrderProps } from "../api/creatOrder";
 
