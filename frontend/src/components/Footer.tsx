@@ -28,6 +28,7 @@ export default function Footer() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
+      
       {/* Logo & Branding */}
       <div className="flex  lg:items-center lg:justify-center w-full  lg:w-auto">
         <div className="flex flex-col lg:items-center lg:justify-center">
@@ -47,7 +48,7 @@ export default function Footer() {
           <Link
             key={index}
             to={to}
-            className="cursor-pointer text-sm max-lg:text-xs hover:text-(--primary-color) transition"
+            className="cursor-pointer text-sm max-lg:text-xs hover:text-[#FFB901] transition"
           >
             {label}
           </Link>
@@ -66,7 +67,7 @@ export default function Footer() {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer text-black hover:text-(--primary-color) transition"
+              className="cursor-pointer text-(nav-color) hover:text-[#FFB901] transition"
             >
               <Icon size={25} />
             </a>

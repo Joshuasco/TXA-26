@@ -121,8 +121,6 @@ const Faq = () => {
             </div>
           ))}
         </div>
-
-        <hr className="border-2 border-black" />
       </div>
     </div>
   );

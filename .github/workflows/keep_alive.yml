@@ -1,0 +1,15 @@
+name: Schedule Health Check
+
+on:
+  schedule:
+    
+    - cron: '*/10 * * * *' #Automate run every 10 minutes
+  workflow_dispatch: # test manually
+
+jobs:
+  ping-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Render Server Health Check
+      run: |
+       curl -s -o /dev/null -w "%{http_code}" https://txa-26.onrender.com/health

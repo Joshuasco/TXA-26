@@ -38,7 +38,7 @@ function App() {
           <Route path="speakers" element={<Speakers />} />
           <Route path="get-your-ticket" element={<GetTicket />} />
           <Route path="swag-order" element={<SwagOrder/>} />
-          <Route path="receipt" element={<OrderReceipt/>} />
+          <Route path="order-receipt" element={<OrderReceipt/>} />
         </Route>
       </Routes>
     </div>

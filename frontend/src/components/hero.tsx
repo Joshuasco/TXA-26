@@ -91,7 +91,7 @@ const Hero = () => {
         <div className="absolute inset-0 z-[1] bg-black/50"></div>
 
         {/* Hero Conten */}
-        <div className="flex flex-col items-center md:items-start justify-beteen md:justify-center lg:justify-between text-center md:text-left h-[60vh] px-12 absolute z-[2]">
+        <div className="flex flex-col items-center md:items-start justify-beteen md:justify-center lg:justify-between text-center md:text-left h-[60vh] px-6 md:px-12 absolute z-[2]">
           <div className="flex flex-col gap-8 text-white">
             <p className="font-normal text-2xl "> Tech X Africa 2026 </p>
 
