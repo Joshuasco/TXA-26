@@ -1,6 +1,6 @@
 import { useState} from "react";
 import TicketCard from "../components/TicketCard";
-import CheckoutContactForm from "../components/CheckoutContactForm";
+import CheckoutContactForm from "../components/checkoutContactForm";
 import type { OrderProps } from "../api/creatOrder";
 import createOrder from "../api/creatOrder";
 import payNow from "../payment/Flutterwave";
