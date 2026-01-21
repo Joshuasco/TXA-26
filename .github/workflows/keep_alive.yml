@@ -2,14 +2,18 @@ name: Schedule Health Check
 
 on:
   schedule:
-    
-    - cron: '*/10 * * * *' #Automate run every 10 minutes
-  workflow_dispatch: # test manually
+    - cron: '*/10 * * * *' # Runs every 10 minutes
+  workflow_dispatch: # Allows manual testing
 
 jobs:
   ping-task:
     runs-on: ubuntu-latest
     steps:
       - name: Render Server Health Check
-      run: |
-       curl -s -o /dev/null -w "%{http_code}" https://txa-26.onrender.com/health
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://txa-26.onrender.com/health)
+          echo "Server responded with status: $response"
+          if [ "$response" != "200" ]; then
+            echo "Health check failed!"
+            exit 1
+          fi
