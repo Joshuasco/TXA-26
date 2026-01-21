@@ -1,6 +1,4 @@
-import { Outlet } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Hero from "../components/hero";
 import MemoryLane from "../components/MemoryLane";
 import PastEvent from "../components/PastEvent";
 import About from "../components/about";
@@ -8,11 +6,10 @@ import Speakers from "../components/Speakers";
 import GetInvolved from "../components/GetInvolved";
 import PartnersAndSponsors from "../components/PartnersAndSponsors";
 
-function MainLayout() {
+export default function Home() {
   return (
-    <div>
-      <Header />
-      <Outlet /> {/* ← Page content goes here */}
+    <>
+      <Hero />
       <div id="about">
         <About />
       </div>
@@ -25,9 +22,6 @@ function MainLayout() {
       <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
         <MemoryLane />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
-
-export default MainLayout

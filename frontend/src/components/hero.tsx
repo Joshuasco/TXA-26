@@ -14,6 +14,7 @@ import { motion, wrap } from "framer-motion";
 
 import Splide, { Splide as SplideType } from "@splidejs/splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import { Link } from "react-router-dom";
 
 const slides = [hero1, hero2, hero3, hero4, hero5, hero6];
 
@@ -90,16 +91,15 @@ const Hero = () => {
         <div className="absolute inset-0 z-[1] bg-black/50"></div>
 
         {/* Hero Conten */}
-        <div className="flex flex-col items-center md:items-start justify-beteen md:justify-center lg:justify-between text-center md:text-left h-[60vh] px-12 absolute z-[2]">
+        <div className="flex flex-col items-center md:items-start justify-beteen md:justify-center lg:justify-between text-center md:text-left h-[60vh] px-6 md:px-12 absolute z-[2]">
           <div className="flex flex-col gap-8 text-white">
             <p className="font-normal text-2xl "> Tech X Africa 2026 </p>
 
             <h2 className="font-bold text-5xl md:text-5xl md:w-xl">
               BEYOND THE BOX, INNOVATION AND CREATIVITY
             </h2>
-            <button className="bg-[#F63A0A] w-full md:w-[40%] py-3 md:py-4 px-8 flex items-center justify-center cursor-pointer text-white hover:bg-[#e63500] transition">
-              Get Your Ticket{" "}
-            </button>
+            <Link className="bg-[#F63A0A] w-full md:w-[40%] py-3 md:py-4 px-8 flex items-center justify-center cursor-pointer text-white hover:bg-[#e63500] transition"
+             to="/get-your-ticket" >Get Your Ticket</Link>
           </div>
 
           <div className="mt-20 md:mt-12">

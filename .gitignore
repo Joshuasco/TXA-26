@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 # Environment files
+frontend/.env
+backend/.env
+backend/google-creds.json
 .env
 .env.*

@@ -15,7 +15,7 @@ const Header = () => {
     { to: "/about", label: "About Us" },
     { to: "/speakers", label: "Speakers" },
     { to: "/#", label: "Get Involved" },
-    { to: "/swag-order", label: "Swag Order" },
+    {to: "/swag-order", label: "Swag Order"},
     { to: "/faq", label: "FAQs" },
   ];
   const dropDownList = [
@@ -57,7 +57,7 @@ const Header = () => {
                   // dropDown
                   <div key={label} className="px-4 py-2 relative group">
                     {/* Trigger */}
-                    <span className="font-normal flex items-center gap-1 cursor-pointer hover:text-(--primary-color)">
+                    <span className="font-normal flex items-center gap-1 cursor-pointer hover:text-[#FFB901]">
                       Get Involved
                       <FiChevronDown size={14} className="group-hover:hidden" />
                       <FiChevronUp
@@ -80,7 +80,7 @@ const Header = () => {
                             key={href}
                             href={href}
                             download
-                            className="px-4 py-2 hover:text-(--primary-color) transition-all duration-300"
+                            className="px-4 py-2 hover:text-[#FFB901]  transition-all duration-300"
                           >
                             {label}
                           </a>
@@ -90,7 +90,7 @@ const Header = () => {
                             href={href}
                             target= "_blank"
                             rel= "noopener noreferrer"
-                            className="px-4 py-2 hover:text-(--primary-color) transition-all duration-300"
+                            className="px-4 py-2 hover:text-[#FFB901] transition-all duration-300"
                           >
                             {label}
                           </a>
@@ -102,7 +102,12 @@ const Header = () => {
                   <NavLink
                     key={to}
                     to={to}
-                    className="hover:text-(--primary-color) transition duration-300"
+                    className={({isActive})=>
+                      `hover:text-[#FFB901] transition duration-300 ${
+                        isActive ? 'text-(--primary-color) font-bold' //active style
+                        : 'text-(--nav-color)' //inactive style
+                      }`
+                  }
                   >
                     {label}
                   </NavLink>
@@ -152,7 +157,7 @@ const Header = () => {
                 <div>
                   <span
                     onClick={() => setDropDown(!dropDown)}
-                    className="px-4 py-2 rounded-lg hover:bg-(--primary-color) hover:text-white
+                    className="px-4 py-2 rounded-lg  hover:text-[#FFB901]
                 transition-all duration-300 flex items-center gap-1 cursor-pointer "
                   >
                     Get Involved
@@ -171,7 +176,7 @@ const Header = () => {
                             key={href}
                             href={href}
                             download
-                            className="px-4 py-2  rounded-lg hover:bg-(--primary-color) hover:text-white transition-all duration-300"
+                            className="px-4 py-2  rounded-lg  hover:text-[#FFB901] transition-all duration-300"
                           >
                             {label}
                           </a>
@@ -181,7 +186,7 @@ const Header = () => {
                             href={href}
                             target= "_blank"
                             rel= "noopener noreferrer"
-                            className="px-4 py-2 rounded-lg hover:bg-(--primary-color) hover:text-white transition-all duration-300"
+                            className="px-4 py-2 rounded-lg hover:[#FFB901] transition-all duration-300"
                           >
                             {label}
                           </a>
@@ -195,7 +200,12 @@ const Header = () => {
                   key={to}
                   to={to}
                   onClick={() => setOpenTab(false)}
-                  className="px-4 py-2 rounded-lg hover:bg-(--primary-color) hover:text-white transition-all duration-300"
+                  className={({isActive})=>
+                      `px-4 py-2 rounded-lg hover:text-[#FFB901] transition-all duration-300 ${
+                        isActive ? 'text-(--primary-color) font-bold' //active style
+                        : 'text-(--nav-color)' //inactive style
+                      }`
+                  }
                 >
                   {label}
                 </NavLink>

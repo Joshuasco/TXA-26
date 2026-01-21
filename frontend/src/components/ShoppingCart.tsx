@@ -1,5 +1,15 @@
 import { Plus, Minus, Trash2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import CheckoutContactForm from "./checkoutContactForm";
+import payNow from "../payment/Flutterwave";
+import createOrder,  {type OrderProps } from "../api/creatOrder";
+
+
+interface ContactFormProps {
+    email: string,
+    phone: string,
+}
 
 type CartItem = {
   id: number;
@@ -28,10 +38,42 @@ export default function ShoppingCart({
   onRemoveItem,
   onBackToSwag,
 }: ShoppingCartProps) {
+  const [isLoading, setIsLoading] = useState(false);
+  const [showContactForm, setShowContactForm] = useState<Boolean>(false);
+  const [contactForm, setContactForm] = useState<ContactFormProps>({
+    email: "",
+    phone: "",
+  });
+
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  //  Handles payment
+     const handleMakePayment = async () => {
+      const order: OrderProps = {
+        order_id: `ORD-${Date.now()}`,
+        type: "Swag Order",
+        email: contactForm.email,
+        phone: contactForm.phone,
+        amount: totalPrice,
+        items: cart,
+      };
+     setIsLoading(true)
+    try{
+      //create Order request on the backend
+      const create_order = await createOrder(order);
+      console.log('created order status = ', create_order)
+      setIsLoading(false)
+      //call flutterwavecheckout payment
+      payNow(order)
+      } catch(error){
+        alert(`Payment initialization failed,  ${error}`)
+        setIsLoading(false)
+      }
+    }
+
 
   return (
     <motion.div
@@ -146,11 +188,32 @@ export default function ShoppingCart({
                 </button>
               </div>
               <div className=" pt-4">
-                <button className="bg-[#F63A0A] text-white text-xl px-6 py-2 hover:bg-[#d63308] transition-colors">
+                <button
+                className="bg-[#F63A0A] text-white text-xl px-6 py-2 hover:bg-[#d63308] transition-colors"
+                onClick={()=>setShowContactForm(true)}
+                >
                   Proceed to Checkout
                 </button>
               </div>
             </div>
+
+            {/* Contact Form */}
+            {showContactForm && (
+              <CheckoutContactForm
+                email={contactForm.email}
+                phone={contactForm.phone}
+                onEmailChange={(email) =>
+                  setContactForm((prev) => ({ ...prev, email }))
+                }
+                onPhoneChange={(phone) =>
+                  setContactForm((prev) => ({ ...prev, phone }))
+                }
+                isLoading = {isLoading}
+                onSubmit={handleMakePayment}
+                onClose={() => setShowContactForm(false)}
+              />
+            )}
+
           </div>
         </>
       )}
