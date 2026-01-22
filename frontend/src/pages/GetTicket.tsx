@@ -4,6 +4,7 @@ import CheckoutContactForm from "../components/checkoutContactForm";
 import type { OrderProps } from "../api/creatOrder";
 import createOrder from "../api/creatOrder";
 import payNow from "../payment/Flutterwave";
+import SEO from "../components/SEO"
 
 
 export interface ContactForm {
@@ -21,7 +22,7 @@ const GetTicket = () => {
     price: 5000,
   });
 
-  //  Handles payment 
+  //  Handles payment
    const handleMakePayment = async () => {
     const order: OrderProps = {
       order_id: `ORD-${Date.now()}`,
@@ -49,11 +50,63 @@ const GetTicket = () => {
       alert(`Payment initialization failed,  ${error}`)
       setIsLoading(false)
     }
-    
-  
+
+
   }
- 
+
   return (
+    <> <SEO
+        title="Get Your Ticket"
+        description="Secure your spot at TECHX Africa 2026! Purchase your ticket now for Nigeria's premier technology conference. Early bird pricing available. Don't miss out on this incredible tech event."
+        url="/tickets"
+        image="/og-tickets.png"
+        keywords="buy TECHX ticket, tech conference tickets Nigeria, TECHX Africa 2026 registration, early bird tickets, tech event tickets Lagos"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": "TECHX Africa 2026",
+          "startDate": "2026-03-15",
+          "endDate": "2026-03-17",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Lagos, Nigeria",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lagos",
+              "addressRegion": "Lagos",
+              "addressCountry": "NG"
+            }
+          },
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Standard",
+              "url": "https://techxafrica.com/tickets",
+              "price": "5000",
+              "priceCurrency": "NGN",
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2026-01-01",
+              "validThrough": "2026-02-15"
+            },
+            {
+              "@type": "Offer",
+              "name": "VIP",
+              "url": "https://techxafrica.com/tickets",
+              "price": "15000",
+              "priceCurrency": "NGN",
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2026-02-16"
+            }
+
+          ],
+          "performer": {
+            "@type": "Organization",
+            "name": "TECHX Africa"
+          }
+        }}
+      />
     <div className="py-10 md:py-12 mx-4">
       <div className="flex flex-col items-center text-center px-2 gap-2 mb-10">
         <h1 className="font-extrabold text-3xl">
@@ -119,6 +172,7 @@ const GetTicket = () => {
       )}
 
     </div>
+    </>
   );
 };
 

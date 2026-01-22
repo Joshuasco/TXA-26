@@ -8,10 +8,12 @@ import SwagOrder from "./pages/SwagOrder";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import OrderReceipt from "./pages/orderReceipt";
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
 
   return (
+      <HelmetProvider>
     <div className="font-nexa md:px-12">
 
       <Routes>
@@ -26,6 +28,7 @@ function App() {
         </Route>
       </Routes>
     </div>
+    </HelmetProvider>
   );
 }
 
