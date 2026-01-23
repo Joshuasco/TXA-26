@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
+import SEO from "../components/SEO";
 
 interface faqData {
   question: string;
@@ -63,66 +64,122 @@ const Faq = () => {
     setIsOpenId(isOpenId === id ? null : id);
   };
   return (
-    <div className="py-12 md:py-12 px-4">
-      <div className="flex flex-col gap-8">
-        <div className="flex flex-col gap-2 md:gap-1 items-center">
-          <h3 className="font-black text-center">FAQs</h3>
-          <h1 className="font-black text-3xl md:text-4xl text-center">
-            {" "}
-            Got Questions? We've Got Answers
-          </h1>
-          <p className="text-center">
-            {" "}
-            Find quick, clear answers to the most common questions about
-            attending Tech X Africa
-          </p>
-        </div>
+    <>
+      {" "}
+      <SEO
+        title="FAQs"
+        description="Find answers to frequently asked questions about TECHX Africa 2026. Get information about tickets, venue, schedule, accommodation, speakers, and more."
+        url="/faqs"
+        image="/og-image.png"
+        keywords="TECHX FAQs, tech conference questions, TECHX Africa 2026 info, event details, ticket information"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "When is TECHX Africa 2026?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "TECHX Africa 2026 will take place from March 15-17, 2026 in Lagos, Nigeria.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How do I get tickets?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "You can purchase tickets directly on our website at techxafrica.com/tickets",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Where is the venue located?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "TECHX Africa 2026 will be held at [Venue Name] in Lagos, Nigeria.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What should I bring to the event?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Please bring your ticket confirmation (digital or printed), a valid ID, and your enthusiasm for technology!",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Are there networking opportunities?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes! TECHX Africa 2026 features dedicated networking sessions, lunch breaks, and evening socials for attendees to connect.",
+              },
+            },
+          ],
+        }}
+      />
+      <div className="py-12 md:py-12 px-4">
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-2 md:gap-1 items-center">
+            <h3 className="font-black text-center">FAQs</h3>
+            <h1 className="font-black text-3xl md:text-4xl text-center">
+              {" "}
+              Got Questions? We've Got Answers
+            </h1>
+            <p className="text-center">
+              {" "}
+              Find quick, clear answers to the most common questions about
+              attending Tech X Africa
+            </p>
+          </div>
 
-        {/* The Questions Section */}
-        <div className="flex flex-col items-center ">
-          {faqQuestions.map((item) => (
-            <div
-              key={item.id}
-              className=" flex flex-col bg-[#F63A0A] w-full md:w-[80%] my-2 md:my-4 border-r-transparent border-t-transparent border-b-transparent rounded-tl-xl rounded-bl-xl pl-2"
-            >
+          {/* The Questions Section */}
+          <div className="flex flex-col items-center ">
+            {faqQuestions.map((item) => (
               <div
-                onClick={() => openFaq(item.id)}
-                className="bg-[#F5F5F5] w-full h-full py-8 px-4 rounded-tl-lg rounded-bl-lg"
+                key={item.id}
+                className=" flex flex-col bg-[#F63A0A] w-full md:w-[80%] my-2 md:my-4 border-r-transparent border-t-transparent border-b-transparent rounded-tl-xl rounded-bl-xl pl-2"
               >
-                <div className="flex items-center justify-between gap-4 mb-2">
-                  <h1 className="font-bold md:text-xl">{item.question}</h1>
+                <div
+                  onClick={() => openFaq(item.id)}
+                  className="bg-[#F5F5F5] w-full h-full py-8 px-4 rounded-tl-lg rounded-bl-lg"
+                >
+                  <div className="flex items-center justify-between gap-4 mb-2">
+                    <h1 className="font-bold md:text-xl">{item.question}</h1>
 
-                  <button
-                    onClick={() => openFaq(item.id)}
-                    className="bg-[#F63A0A] rounded-full p-1"
-                  >
-                    <motion.div
-                      animate={{ rotate: isOpenId === item.id ? 180 : 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    <button
+                      onClick={() => openFaq(item.id)}
+                      className="bg-[#F63A0A] rounded-full p-1"
                     >
-                      <MdOutlineKeyboardArrowDown color="white" size={25} />
-                    </motion.div>
-                  </button>
+                      <motion.div
+                        animate={{ rotate: isOpenId === item.id ? 180 : 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      >
+                        <MdOutlineKeyboardArrowDown color="white" size={25} />
+                      </motion.div>
+                    </button>
+                  </div>
+                  <AnimatePresence>
+                    {isOpenId === item.id && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        {item.answers}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-                <AnimatePresence>
-                  {isOpenId === item.id && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      {item.answers}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

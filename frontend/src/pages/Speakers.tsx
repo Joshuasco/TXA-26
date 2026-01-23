@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import SpeakerCard from "../components/SpeakerCard";
+import SEO from "../components/SEO"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -22,6 +23,23 @@ const speakers = [
 
 export default function SpeakersPage() {
   return (
+    <>
+    <SEO
+        title="Speakers"
+        description="Meet our incredible lineup of speakers at TECHX Africa 2026. Industry leaders, innovators, and tech experts from across Africa and beyond sharing insights and knowledge."
+        url="/speakers"
+        image="/og-speakers.png"
+        keywords="TECHX speakers, tech conference speakers, African tech leaders, tech innovators Nigeria, keynote speakers"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "TECHX Africa 2026 Speakers",
+          "description": "Featured speakers at TECHX Africa 2026",
+          "url": "https://techxafrica.com/speakers",
+          "numberOfItems": 20
+        }}
+      />
+
     <section className="w-full py-8 md:py-15">
       <motion.div
         initial="hidden"
@@ -48,5 +66,6 @@ export default function SpeakersPage() {
         </div>
       </motion.div>
     </section>
+    </>
   );
 }

@@ -38,6 +38,10 @@ app.add_middleware(
     allow_headers=["*"],    # allow any headers like Content-Type
 )
 
+@app.get("/")
+def hello():
+    return {"Hello": "TXA server is active and running, visit /docs for interactive doc "}
+
 #ping point to keep render server active
 @app.get("/health")
 def health_check():

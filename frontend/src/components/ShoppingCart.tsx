@@ -50,7 +50,7 @@ export default function ShoppingCart({
     0
   );
 
-  //  Handles payment 
+  //  Handles payment
      const handleMakePayment = async () => {
       const order: OrderProps = {
         order_id: `ORD-${Date.now()}`,
@@ -188,7 +188,7 @@ export default function ShoppingCart({
                 </button>
               </div>
               <div className=" pt-4">
-                <button 
+                <button
                 className="bg-[#F63A0A] text-white text-xl px-6 py-2 hover:bg-[#d63308] transition-colors"
                 onClick={()=>setShowContactForm(true)}
                 >
@@ -196,7 +196,7 @@ export default function ShoppingCart({
                 </button>
               </div>
             </div>
-                
+
             {/* Contact Form */}
             {showContactForm && (
               <CheckoutContactForm

@@ -51,7 +51,7 @@ export default function SwagCard({
           </div>
 
           {/* Buttons always visible on small screens */}
-          <div className="md:hidden absolute inset-0 flex flex-col items-center justify-center gap-3">
+          <div className="md:hidden absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/40">
             <button
               className="text-white text-lg border-2 border-white px-5 py-1 hover:bg-white hover:text-black transition-colors"
               onClick={onAddToCart}

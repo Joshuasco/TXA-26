@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import GetTicket from "./pages/GetTicket";
 import Faq from "./pages/Faq";
@@ -7,28 +6,15 @@ import Speakers from "./pages/Speakers";
 import SwagOrder from "./pages/SwagOrder";
 
 import { Routes, Route } from "react-router-dom";
-import LoadingScreen from "./components/LoadingScreen";
 import MainLayout from "./layouts/MainLayout";
 import OrderReceipt from "./pages/orderReceipt";
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if ("fonts" in document) {
-      document.fonts.ready.then(() => {
-        setIsLoading(false);
-      });
-    } else {
-      // Fallback timer
-      const timer = setTimeout(() => setIsLoading(false), 0);
-      return () => clearTimeout(timer);
-    }
-  }, []);
 
   return (
+      <HelmetProvider>
     <div className="font-nexa md:px-12">
-      <LoadingScreen isLoading={isLoading} />
 
       <Routes>
         <Route element={<MainLayout />}>
@@ -42,6 +28,7 @@ function App() {
         </Route>
       </Routes>
     </div>
+    </HelmetProvider>
   );
 }
 
