@@ -50,7 +50,7 @@ def health_check():
 #Create Order instance on DB
 @app.post("/create-order")
 def create_order(order: Order):
-    print(f'GOOGLE CREDENTIALS = {GOOGLE_CREDS}')
+  #  print(f'GOOGLE CREDENTIALS = {GOOGLE_CREDS}')
     print(f'order datas = {order}')
     db.collection("orders").document(order.order_id).set({
         **order.dict(),
